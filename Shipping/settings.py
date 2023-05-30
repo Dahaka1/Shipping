@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env("DJANGO_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # EXTENDS
 DATABASE_INIT = [
@@ -39,7 +39,7 @@ DATABASE_INIT = [
 
 STATIC_LOCATIONS_SOURCE = "locations/static/locations/other/uszips.csv"
 
-START_COMMAND = "python manage.py runserver"
+START_COMMAND = "python manage.py runserver 0.0.0.0:8000"
 
 LOCATIONS_OBJECTS_INIT = "python manage.py locations_init"
 MACHINES_OBJECTS_INIT = "python manage.py machines_init"
@@ -50,7 +50,8 @@ GEOLOCATOR = Nominatim(
 ###
 
 ALLOWED_HOSTS = [
-	"127.0.0.1"
+	"127.0.0.1",
+	"0.0.0.0"
 ]
 
 # Application definition

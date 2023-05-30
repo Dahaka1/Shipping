@@ -1,0 +1,35 @@
+version: '3.7'
+
+services:
+  db:
+    image: postgres:15.2-alpine
+    container_name: postgres
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=db
+    restart: unless-stopped
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    networks:
+      - backend
+    ports:
+      - "5432:5432"
+  shipping_app:
+    build: .
+    command: python /usr/src/shipping_rest/manage.py
+    volumes:
+      - .:/usr/src/shipping_app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    networks:
+      - backend
+
+volumes:
+  postgres_data:
+
+networks:
+  backend:
+    driver: bridge
