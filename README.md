@@ -26,6 +26,6 @@ Includes standard functions providing database store handling by calling http-re
     5) "*/api/v1/cargo/<cargo_id>*" (method *PUT*) - editing of selected cargo object (including its weight, description);
     6) "*/api/v1/cargo/<cargo_id>*" (method *DELETE*) - manually deleting of selected cargo object.
 - API also supports all standard DRF-queries. For example:
-    - "*/api/v1/machine(or location)*" (method *GET*) - getting all model objects through DRF-serializers handling of 
+    - "*/api/v1/machine*" (method *GET*) - getting all model objects through DRF-serializers handling of 
       models query sets;
     - etc.
