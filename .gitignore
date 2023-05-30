@@ -1,4 +1,3 @@
 venv
-Shipping/.env
 .idea
 loguru_logging/logs.log
