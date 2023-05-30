@@ -16,9 +16,9 @@ Includes standard functions providing database store handling by calling http-re
     - DJANGO_KEY (your django private key);
     - DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_NAME (database params you need).
 - After that you should just to start server and its database handling by writing standard Django command-line command:
-    - *python manage.py*
-    The command will initiate auto-reformatting of your DB if needed. It includes django-models migrations and creating
-    of default objects sets. Maybe it will be necessary to wait 10 seconds
+  - *python manage.py* - 
+  The command will initiate auto-reformatting of your DB if needed. It includes django-models migrations and creating
+  of default objects sets. Maybe it will be necessary to wait 10 seconds
 - Then you can call standard functions by sending HTTP-queries for working server API. Available queries examples:
     1) */api/v1/cargo* (method *POST*) - creating new cargo object by zipcode and weight/description params;
     2) */api/v1/cargo* (method *GET*) - getting all cargo objects with listing nearby machines for using selected cargo;
